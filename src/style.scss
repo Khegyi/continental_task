@@ -1,0 +1,50 @@
+.counter {
+  width: 200px;
+}
+
+input {
+  width: 100%;
+  padding: 5px 12px;
+  margin: 8px 0;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stepper {
+  flex: 1;
+}
+.roller {
+  flex: 2;
+}
+.button {
+  background-color: #3b5cc7;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 5px 12px;
+  text-align: center;
+
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  &.green {
+    background-color: #4caf50;
+  }
+  &.red {
+    background-color: #f44336;
+  }
+  &:hover {
+    filter: saturate(150%);
+  }
+  &:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+  }
+}
