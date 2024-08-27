@@ -1,30 +1,36 @@
 import React, { useState } from "react";
 
 const Counter = () => {
+  
+  const range = [0, 100];
+  const max = range[1] - 1;
+  const min = range[0] + 1;
+
+  const generateRandomNumber = () => {
+    return Math.floor(Math.random() * (range[1] - range[0])) + range[0];
+  };
+
   const [counter, setCounter] = useState(generateRandomNumber());
 
   const increaseCounter = () => {
-    if (counter === 100) {
+    if (counter === max) {
       return;
     }
     setCounter(counter + 1);
   };
   const decreaseCounter = () => {
-    if (counter === 0) {
+    if (counter === min) {
       return;
     }
     setCounter(counter - 1);
   };
 
-  function generateRandomNumber() {
-    return Math.floor(Math.random() * 100);
-  }
 
   const StepperButton = ({ onClick, dir }) => {
     let isDisabled = false;
-    if (dir === "+" && counter === 100) {
+    if (dir === "+" && counter === max) {
       isDisabled = true;
-    } else if (dir === "-" && counter === 0) {
+    } else if (dir === "-" && counter === min) {
       isDisabled = true;
     }
 
